@@ -8,12 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
 
-    mobileMenuBtn.addEventListener('click', function() {
+    function toggleMenu(event) {
+        event.preventDefault();
+        event.stopPropagation();
         navMenu.classList.toggle('active');
+    }
+
+    // Add both click and touch events for better mobile handling
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+    mobileMenuBtn.addEventListener('touchend', toggleMenu);
+
+    // Close menu when clicking/touching outside
+    document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
+    document.addEventListener('touchend', function(e) {
         if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
             navMenu.classList.remove('active');
         }
