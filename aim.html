@@ -12,22 +12,62 @@
     <style>
         .aim-content {
             max-width: 1200px;
-            margin: 100px auto 40px;
-            padding: 0 20px;
+            margin: 100px auto 60px;
+            padding: 0 40px;
         }
         
         .aim-section {
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .aim-section h1, 
+        .aim-section h2 {
+            color: #0066cc;
             margin-bottom: 30px;
+            text-align: center;
         }
 
         .aim-section h1 {
-            color: #0066cc;
-            margin-bottom: 20px;
             font-size: 2.5em;
+        }
+
+        .aim-section h2 {
+            font-size: 2em;
+            margin-top: 40px;
+        }
+
+        .aim-section p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .aim-content {
+                margin: 70px auto 20px;
+                padding: 0 15px;
+            }
+            
+            .aim-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .aim-section h1 {
+                font-size: 1.8em;
+            }
+
+            .aim-section p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
         }
 
         .aim-section p {
@@ -51,6 +91,7 @@
             <div class="logo">
                 <a href="index.html" class="logo-text"><span class="i">i</span><span class="of">of</span><span class="india">india</span></a>
             </div>
+            <button class="mobile-menu-btn">☰</button>
             <nav class="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -237,5 +278,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
