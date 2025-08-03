@@ -5,31 +5,50 @@ let notes = [];
 
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded'); // Debug log
+    
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
+    
+    console.log('Mobile Menu Button:', mobileMenuBtn); // Debug log
+    console.log('Nav Menu:', navMenu); // Debug log
 
     function toggleMenu(event) {
-        event.preventDefault();
-        event.stopPropagation();
+        console.log('Toggle Menu Called'); // Debug log
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
         navMenu.classList.toggle('active');
+        console.log('Menu Active State:', navMenu.classList.contains('active')); // Debug log
     }
 
-    // Add both click and touch events for better mobile handling
-    mobileMenuBtn.addEventListener('click', toggleMenu);
-    mobileMenuBtn.addEventListener('touchend', toggleMenu);
+    // Handle click events
+    mobileMenuBtn.addEventListener('click', function(e) {
+        console.log('Menu Button Clicked'); // Debug log
+        toggleMenu(e);
+    });
 
-    // Close menu when clicking/touching outside
+    // Handle touch events
+    mobileMenuBtn.addEventListener('touchstart', function(e) {
+        console.log('Menu Button Touched'); // Debug log
+        e.preventDefault();
+        toggleMenu(e);
+    }, { passive: false });
+
+    // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !mobileMenuBtn.contains(e.target)) {
+            console.log('Closing Menu - Click Outside'); // Debug log
             navMenu.classList.remove('active');
         }
     });
 
-    document.addEventListener('touchend', function(e) {
-        if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            navMenu.classList.remove('active');
-        }
-    });
+    // Initialize menu state
+    navMenu.classList.remove('active');
+    console.log('Initial Menu Setup Complete'); // Debug log
 });
 
 // Load saved notes from localStorage
