@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iofindia</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-content {
+            max-width: 1200px;
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
+        
+        .contact-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h1 {
+            color: #0066cc;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-method i {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+
+        .contact-method h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .contact-method a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .contact-method a:hover {
+            color: #0066cc;
+        }
+
+        .contact-method.email i {
+            color: #D44638;
+        }
+
+        .contact-method.instagram i {
+            color: #E4405F;
+        }
+
+        .contact-method.facebook i {
+            color: #1877F2;
+        }
+
+        .contact-method.twitter i {
+            color: #1DA1F2;
+        }
+
+        .contact-intro {
+            text-align: center;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                margin-top: 80px;
+            }
+            
+            .contact-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html" class="logo-text"><span class="i">i</span><span class="of">of</span><span class="india">india</span></a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="aim.html">Our Aim</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-content">
+        <div class="contact-section">
+            <h1>Get in Touch</h1>
+            <p class="contact-intro">Have questions or want to get involved? Reach out to us through any of these channels. We'd love to hear from you and discuss how we can work together to make a difference.</p>
+            
+            <div class="contact-methods">
+                <div class="contact-method email">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:home.ideaofindia@gmail.com">home.ideaofindia@gmail.com</a>
+                </div>
+
+                <div class="contact-method instagram">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <a href="https://www.instagram.com/home.ideaofindia" target="_blank">@home.ideaofindia</a>
+                </div>
+
+                <div class="contact-method facebook">
+                    <i class="fab fa-facebook"></i>
+                    <h3>Facebook</h3>
+                    <a href="https://www.facebook.com/home.ideaofindia" target="_blank">@home.ideaofindia</a>
+                </div>
+
+                <div class="contact-method twitter">
+                    <i class="fab fa-twitter"></i>
+                    <h3>Twitter</h3>
+                    <a href="https://twitter.com/home_iofindia" target="_blank">@home_iofindia</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html" class="logo-text"><span class="i">i</span><span class="of">of</span><span class="india">india</span></a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 iofindia. All rights reserved.</p>
+                <p>Contact: home.ideaofindia@gmail.com</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
