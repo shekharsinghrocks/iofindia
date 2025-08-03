@@ -4,51 +4,54 @@ let noteForm = null;
 let notes = [];
 
 // Mobile menu functionality
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM Content Loaded'); // Debug log
-    
+window.addEventListener('load', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
-    
-    console.log('Mobile Menu Button:', mobileMenuBtn); // Debug log
-    console.log('Nav Menu:', navMenu); // Debug log
+
+    if (!mobileMenuBtn || !navMenu) {
+        console.error('Mobile menu elements not found');
+        return;
+    }
 
     function toggleMenu(event) {
-        console.log('Toggle Menu Called'); // Debug log
         if (event) {
             event.preventDefault();
             event.stopPropagation();
         }
-        navMenu.classList.toggle('active');
-        console.log('Menu Active State:', navMenu.classList.contains('active')); // Debug log
+        
+        const isActive = navMenu.classList.contains('active');
+        
+        // Toggle the active class
+        if (isActive) {
+            navMenu.classList.remove('active');
+        } else {
+            navMenu.classList.add('active');
+        }
+        
+        console.log('Menu toggled:', !isActive);
     }
 
-    // Handle click events
-    mobileMenuBtn.addEventListener('click', function(e) {
-        console.log('Menu Button Clicked'); // Debug log
-        toggleMenu(e);
-    });
+    // Handle menu button clicks
+    mobileMenuBtn.addEventListener('click', toggleMenu);
 
-    // Handle touch events
-    mobileMenuBtn.addEventListener('touchstart', function(e) {
-        console.log('Menu Button Touched'); // Debug log
-        e.preventDefault();
-        toggleMenu(e);
-    }, { passive: false });
+    // Handle menu item clicks
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (navMenu.classList.contains('active') && 
             !navMenu.contains(e.target) && 
             !mobileMenuBtn.contains(e.target)) {
-            console.log('Closing Menu - Click Outside'); // Debug log
             navMenu.classList.remove('active');
         }
     });
 
-    // Initialize menu state
+    // Ensure menu starts closed
     navMenu.classList.remove('active');
-    console.log('Initial Menu Setup Complete'); // Debug log
 });
 
 // Load saved notes from localStorage
